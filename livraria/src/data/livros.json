@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "titulo": "Dias Perfeitos",
+    "autor": "Hygor Marques",
+    "categoria": "Suspense",
+    "ano": 2023
+  },
+  {
+    "id": 2,
+    "titulo": "Rainha Vermelha",
+    "autor": "Julia Baldissera",
+    "categoria": "Fantasia",
+    "ano": 2020
+  }
+]
