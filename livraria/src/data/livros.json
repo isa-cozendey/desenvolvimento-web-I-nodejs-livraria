@@ -4,20 +4,26 @@
     "titulo": "Dias Perfeitos",
     "autor": "Hygor Marques",
     "categoria": "Suspense",
-    "ano": 2023
+    "ano": 2023,
+    "editora": "Globo",
+    "paginas": 354
   },
   {
     "id": 2,
     "titulo": "Rainha Vermelha",
     "autor": "Julia Baldissera",
     "categoria": "Fantasia",
-    "ano": 2020
+    "ano": 2020,
+    "editora": "Globo",
+    "paginas": 456
   },
   {
     "id": 3,
     "titulo": "Rainha Vermelha",
     "autor": "Julia Baldissera",
     "categoria": "Fantasia",
-    "ano": 2020
+    "ano": 2020,
+    "editora": "Seguinte",
+    "paginas": 768
   }
 ]
