@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 const livrosRoutes = require("./livros.routes");
+const authRoutes = require('./auth.routes');
+console.log("Index routes carregadas!");
 
 router.get("/", (req, res) => {
 	res.status(200).json({
@@ -10,6 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.use("/livros", livrosRoutes);
+router.use("/auth", authRoutes);
 
 module.exports = router;
 
