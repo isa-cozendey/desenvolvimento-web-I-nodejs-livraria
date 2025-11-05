@@ -5,7 +5,7 @@ db.init();
 const routes = require("./routes");
 const errorHandler = require("./middlewares/errorHandler");
 
-console.log("App carregado!"); // log para testar
+console.log("App carregado!"); 
 
 app.use("/api", routes);
 app.use(errorHandler);

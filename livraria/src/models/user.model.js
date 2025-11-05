@@ -3,7 +3,7 @@ class User {
  this.id = id ?? null;
  this.username = String(username || '').trim();
  this.created_at = created_at;
- this.password = password; // opcional (registro/troca)
+ this.password = password; 
  this._validar();
  }
  _validar() {
