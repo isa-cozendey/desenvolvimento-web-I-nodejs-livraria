@@ -1,8 +1,12 @@
 const app = require("./config/express");
 const db = require("./database/sqlite");
-db.init(); // garante que a tabela exista antes das rotas
+db.init();
+
 const routes = require("./routes");
 const errorHandler = require("./middlewares/errorHandler");
+
+console.log("App carregado!"); // log para testar
+
 app.use("/api", routes);
 app.use(errorHandler);
 

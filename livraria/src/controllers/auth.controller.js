@@ -8,19 +8,18 @@ class AuthController {
 
   async register(req, res, next) {
     try {
-      const { username, password } = req.body;
-      if (!username || !password) {
+      const { username, email, name, password } = req.body;
+      if (!username || !password|| !email || !name) {
         return res.status(400).json({ erro: 'Preencha todos os campos obrigatórios.' });
       }
 
-      // CORREÇÃO: await aqui
       const existingUser = await this.usersRepo.findByUsername(username);
       if (existingUser) {
         return res.status(409).json({ erro: 'Usuário já existe.' });
       }
 
       const hash = await bcrypt.hash(password, 10);
-      const user = await this.usersRepo.create({ username, passwordHash: hash });
+      const user = await this.usersRepo.create({ username, email, name, passwordHash: hash });
 
       req.session.userId = user.id;
       res.status(201).json({ mensagem: 'Usuário registrado com sucesso!', user });
@@ -33,7 +32,7 @@ class AuthController {
     try {
       const { username, password } = req.body;
 
-      // CORREÇÃO: await aqui
+
       const user = await this.usersRepo.findByUsername(username);
       if (!user) {
         return res.status(401).json({ erro: 'Usuário ou senha inválidos.' });
@@ -57,7 +56,6 @@ class AuthController {
         return res.status(401).json({ erro: 'Não autenticado.' });
       }
 
-      // CORREÇÃO: await aqui
       const user = await this.usersRepo.findById(req.session.userId);
       if (!user) {
         return res.status(404).json({ erro: 'Usuário não encontrado.' });
